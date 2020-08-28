@@ -24,7 +24,7 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>Release\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <DebugType>pdbonly</DebugType>
@@ -56,8 +56,12 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Patient.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\CovidDatabase_20200828_10-36-49.dacpac" />
   </ItemGroup>
 </Project>
